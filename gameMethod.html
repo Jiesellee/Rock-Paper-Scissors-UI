@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock-Paper-Scissors-Game</title>
+</head>
+
+<body>
+    <script>
+        function computerPlay() {
+            num = Math.floor(Math.random() * 3);
+            switch (num) {
+                case 0:
+                    return "rock";
+                case 1:
+                    return "paper";
+                case 2:
+                    return "scissors";
+            }
+
+        }
+
+        function playRound(playerSelection, computerSelection) 
+        {
+            //Rock
+            if (playerSelection == 'rock' && computerSelection == 'scissors'){
+              
+                return "You Win! Rock beats Scissors";
+
+            }
+            else if(playerSelection == "rock" && computerSelection == "paper"){
+                return "You Loose! Rock beats Paper";  
+                }
+
+            //Paper
+            else if(playerSelection == "paper" && computerSelection == "rock"){
+                return "You Win! Paper beats Rock";  
+                }
+
+            else if(playerSelection == "paper" && computerSelection == "scissor"){
+                return "You Loose! Scissors beats Paper";  
+                }
+                
+            //Scissors    
+            else if(playerSelection == "scissor" && computerSelection == "paper"){
+                return "You Win! Scissors beats Paper "; 
+            }
+            else if(playerSelection == "scissor" && computerSelection == "rock"){
+                return "You Loose! Scissors beats Rock";  
+                }
+        }
+        
+    </script>
+</body>
+
+</html>
