@@ -7,6 +7,9 @@
 
 <body>
     <script>
+        var plyslec = 0;
+        var compsle = 0;
+
         function computerPlay() {
             num = Math.floor(Math.random() * 3);
             switch (num) {
@@ -20,36 +23,87 @@
 
         }
 
-        function playRound(playerSelection, computerSelection) 
-        {
-            //Rock
-            if (playerSelection == 'rock' && computerSelection == 'scissors'){
-              
+        function game() {
+            var counter = 0;
+
+            console.log("Welcome to Rock,Paper,Scissors!!\nThe rules are as follows:\n" +
+                "Each Player has to select one of the follow\n\tRock,Paper,Scissors\nOnce " +
+                "each play makes their selection,the computer\nwill make their selection " +
+                "and the results will be displayed.\nEach game lasts 5 rounds\nGood Luck!")
+
+            while (counter <= 4) {
+                var playerSelection = prompt("Please enter your selection rock, paper or scissors")
+                const computerSelection = computerPlay()
+                console.log(playRound(playerSelection, computerSelection))
+                counter++;
+            }
+
+            if (plyslec==compsle){
+                 console.log("Its a tie. Please play again")
+            }
+            else if (plyslec > compsle) {
+                console.log("Congratulations, you are the winner after 5 rounds")
+            }
+            else{
+                console.log("Bad luck, the PC has won after after 5 rounds. ")
+            }
+
+        }
+        function playRound(playerSelection, computerSelection) {
+             console.log('\n')
+             console.log("Player selection is "+playerSelection)
+             console.log("PC selection is "+computerSelection)
+   
+          //Rock
+            if (playerSelection == 'rock' && computerSelection == 'scissors') {
+                plyslec++;
                 return "You Win! Rock beats Scissors";
 
             }
-            else if(playerSelection == "rock" && computerSelection == "paper"){
-                return "You Loose! Rock beats Paper";  
-                }
+            
+            else if (playerSelection == 'rock' && computerSelection == "paper") {
+               compsle++;
+                return "You Loose! Rock beats Paper";
+            }
+            
+             else if (playerSelection == 'rock' && computerSelection == 'rock') {
+                return "You have both chosen rock, Please try again";
+            }
 
             //Paper
-            else if(playerSelection == "paper" && computerSelection == "rock"){
-                return "You Win! Paper beats Rock";  
-                }
-
-            else if(playerSelection == "paper" && computerSelection == "scissor"){
-                return "You Loose! Scissors beats Paper";  
-                }
-                
-            //Scissors    
-            else if(playerSelection == "scissor" && computerSelection == "paper"){
-                return "You Win! Scissors beats Paper "; 
+            else if (playerSelection == 'paper' && computerSelection == 'rock') {
+                plyslec++;
+                return "You Win! Paper beats Rock";
             }
-            else if(playerSelection == "scissor" && computerSelection == "rock"){
-                return "You Loose! Scissors beats Rock";  
-                }
-        }
+
+            else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+                  compsle++;
+                return "You Loose! Scissors beats Paper";
+            }
+
+            else if (playerSelection == 'paper' && computerSelection == 'paper') {
+                return "You have both chosen paper, Please try again";
+            }
+
+            //Scissors    
+            else if (playerSelection == "scissors" && computerSelection == "paper") {
+                plyslec++;
+                return "You Win! Scissors beats Paper ";
+            }
         
+             else if (playerSelection == "scissors" && computerSelection == "rock") {
+                compsle++;
+                return "You Loose! Scissors beats Rock";
+            }
+
+            else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
+                 return "You have both chosen scissors, Please try again";
+            }
+
+            else{
+                console.log("Sorry, that word is not recognised. Please enter a valid word")
+            }
+        }
     </script>
 </body>
 
