@@ -3,109 +3,51 @@
 
 <head>
     <title>Rock-Paper-Scissors-Game</title>
+    <link rel = "stylesheet" type = "text/css" href="style.css">
+    <link rel = "shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <script>
-        var plyslec = 0;
-        var compsle = 0;
-        var counter = 0;
 
-        function computerPlay() {
-            num = Math.floor(Math.random() * 3);
-            switch (num) {
-                case 0:
-                    return "rock";
-                case 1:
-                    return "paper";
-                case 2:
-                    return "scissors";
-            }
+<h1>Rock, Paper, Scissors Game</h1>
+     <hr>
+     <p> Welcome to the Rock, Paper, Scissors<br>The rules are as follows:<br>
+                Each player has to select one of the following:<br> Rock, Paper, Scissors<br>Once 
+                each player makes their selection, the computer will then make their selection
+                and the results will be displayed.<br>Good Luck!</p>
 
-        }
+    <div class = "button" > 
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
 
-        function game() {
-           
-            console.log("Welcome to Rock,Paper,Scissors!!\nThe rules are as follows:\n" +
-                "Each player has to select one of the follow\n\tRock,Paper,Scissors\nOnce " +
-                "each player makes their selection,the computer\nwill then make their selection " +
-                "and the results will be displayed.\nEach game lasts 5 rounds\nGood Luck!")
+    
+    <div class = "roundWinnerTitle">
+      <h2>Round Winner</h2>
+    </div>
 
-            while (counter <= 4) {
-                var playerSelection = prompt("Please enter your selection rock, paper or scissors")
-                const computerSelection = computerPlay()
-                console.log(playRound(playerSelection, computerSelection))
-                counter++;
-            }
-
-            if (plyslec==compsle){
-                 console.log("Its a tie. Please play again")
-            }
-            else if (plyslec > compsle) {
-                console.log("Congratulations, you are the winner after 5 rounds")
-            }
-            else{
-                console.log("Bad luck, the PC has won after after 5 rounds. ")
-            }
-
-        }
-
-        function playRound(playerSelection, computerSelection) {
-             console.log('\n')
-             console.log("Player selection is "+playerSelection)
-             console.log("PC selection is "+computerSelection)
+    <div id = "gamePlay"></div> 
+    <div id = "roundWinner"></div>
+    
+     <div class = "currentScore">
+        <h2>Score</h2>
+    </div>
+    <div class = "boxScore">
+        <p id="p2">:</p>
+     </div>
+     
+    <div class = "box">
+      <div class = "score">
+        <h2>Previous Scores</h2>
+      </div>
+    </div>
+    
    
-          //Rock
-            if (playerSelection == 'rock' && computerSelection == 'scissors') {
-                plyslec++;
-                return "You Win! Rock beats Scissors";
-            }
-            
-            else if (playerSelection == 'rock' && computerSelection == "paper") {
-               compsle++;
-                return "You Loose! Rock beats Paper";
-            }
-            
-             else if (playerSelection == 'rock' && computerSelection == 'rock') {
-                return "You have both chosen rock, Please try again";
-            }
-
-            //Paper
-            else if (playerSelection == 'paper' && computerSelection == 'rock') {
-                plyslec++;
-                return "You Win! Paper beats Rock";
-            }
-
-            else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-                  compsle++;
-                return "You Loose! Scissors beats Paper";
-            }
-
-            else if (playerSelection == 'paper' && computerSelection == 'paper') {
-                return "You have both chosen paper, Please try again";
-            }
-
-            //Scissors    
-            else if (playerSelection == "scissors" && computerSelection == "paper") {
-                plyslec++;
-                return "You Win! Scissors beats Paper ";
-            }
-        
-             else if (playerSelection == "scissors" && computerSelection == "rock") {
-                compsle++;
-                return "You Loose! Scissors beats Rock";
-            }
-
-            else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
-                 return "You have both chosen scissors, Please try again";
-            }
-
-            else{
-                console.log("Sorry, that word is not recognised. Please enter a valid word")
-                counter--
-            }
-        }
-    </script>
+  <script src ="gameAction.js"></script>
 </body>
 
 </html>
+
+<!--<div class = "v1"></div>-->

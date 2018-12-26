@@ -1,0 +1,107 @@
+body {
+    background-color:#ffffff;
+}
+
+h1{
+    text-align: center;
+    color: grey;
+}
+
+p{
+  margin-left: auto;
+    margin-right: auto;
+    width: 25em;  
+}
+
+#p2{
+
+}
+
+.button button{
+    align-content: center;
+    background-color: azure;
+    padding:15px 70px;
+    font-size:25px;
+    border-radius:10%;
+    margin:5px;
+    border-color: lightblue;
+    cursor: pointer; 
+    color: #2196F3;    
+}
+.button button:focus {
+    box-shadow: 0px 0px 20px #568bb7;
+    outline: 0;
+}
+
+
+.button button:hover{
+    background-color: #00bcd49c;
+    color:#23386bbd;
+}
+
+.button{
+    text-align: center;
+}
+
+.currentScore {
+      color: grey;
+      text-align: center;
+      position: relative;
+      top: -13px;
+      left: 100px;
+}
+
+.roundWinnerTitle{
+      color: grey;
+      text-align: center;
+      position: relative;
+      top: 35px;
+      left: -200px;
+}
+
+#roundWinner {
+      position: relative;
+      top: 40px;
+      left: 140px;
+      font-size: 1.2em;
+}
+
+#gamePlay{
+      position: relative;
+      top: 30px;
+      left: 140px;
+      font-size: 1.2em;
+      line-height: 150%;
+}
+
+.boxScore{
+  width: 160px;
+  height: 100px;
+  position: relative;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  top: 200px;
+  left: 800px;
+  background-color: #0f94f682;
+}
+
+
+.box {
+  width: 750px;
+  height: 700px;
+  position: relative;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  top: 200px;
+  left: 200px;
+  background-color: #0f94f682;
+}
+
+.v1{
+    border-left: 3px solid #03A9F4;
+    height:200px;
+    position: absolute;
+    left:50%;
+    margin-left:-3px;
+    top:350px;
+}
