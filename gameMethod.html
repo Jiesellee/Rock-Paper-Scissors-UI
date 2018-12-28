@@ -6,13 +6,15 @@
     <link rel = "stylesheet" type = "text/css" href="style.css">
     <link rel = "shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich|Michroma" 
+          rel="stylesheet">
 </head>
 
 <body>
 
 <h1>Rock, Paper, Scissors Game</h1>
      <hr>
-     <p> Welcome to the Rock, Paper, Scissors<br>The rules are as follows:<br>
+     <p id = "gameInstructions" > Welcome to the Rock, Paper, Scissors<br>The rules are as follows:<br>
                 Each player has to select one of the following:<br> Rock, Paper, Scissors<br>Once 
                 each player makes their selection, the computer will then make their selection
                 and the results will be displayed.<br>Good Luck!</p>
@@ -30,16 +32,21 @@
 
     <div id = "gamePlay"></div> 
     <div id = "roundWinner"></div>
+    <div id = "gameResult"></div>
+    <div id = "resetGame"></div>
     
-     <div class = "currentScore">
+     <div class = "currentScoreTitle">
         <h2>Score</h2>
     </div>
+    
     <div class = "boxScore">
-        <p id="p2">:</p>
+        <span id ="player1Score"></span>
+        <span id = "p2">:</span>
+        <span id ="player2Score"></span>
      </div>
      
     <div class = "box">
-      <div class = "score">
+      <div class = "previousScore">
         <h2>Previous Scores</h2>
       </div>
     </div>

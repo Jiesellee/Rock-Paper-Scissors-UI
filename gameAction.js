@@ -1,16 +1,20 @@
 
-        var plyslec = 0;
-        var compsle = 0;
-        var counter = 0;
-   
+        var plyerScore = 0;
+        var compScore = 0;
+        var gameScores = [];
+        
+        
+        document.getElementById('player1Score').innerHTML = plyerScore;
+        document.getElementById('player2Score').innerHTML = compScore;
       
-
+//function 
           rock.addEventListener('click', function(){
             const computerSelection = computerPlay();
             const result = playRound('rock',computerSelection);
             document.getElementById('gamePlay').innerHTML =  'Player selection is Rock'+ "<br />" 
             +'PC selection is '+ computerSelection;
             document.getElementById('roundWinner').innerHTML = result;
+            overallGameWinner(); 
           });
 
            
@@ -20,7 +24,8 @@
              document.getElementById('gamePlay').innerHTML =  'Player selection is Paper'+ "<br />" 
              +'PC selection is '+ computerSelection;
              document.getElementById("roundWinner").innerHTML = result;
-           });
+             overallGameWinner();
+              });
 
          
           scissors.addEventListener('click', function(){
@@ -29,23 +34,50 @@
              document.getElementById('gamePlay').innerHTML =  'Player selection is Scissors'+ "<br />" 
              +'PC selection is '+ computerSelection;
              document.getElementById("roundWinner").innerHTML = result;
-          });
+             overallGameWinner();
+             });
     
+
+    /*function displaysAllGameScores(){
+       gameScores.push();
+    }*/
+
+    function overallGameWinner(){
+
+      if (plyerScore>=5){
+         document.getElementById('gameResult').innerHTML = 'Congratulations, you have won this game after 5 rounds!!' ;
+         resetGameScore();
+    }
+      else if (compScore>=5){
+        document.getElementById('gameResult').innerHTML = 'Bad luck, the PC has won this game after 5 rounds' ;
+        resetGameScore();
+     }
+    }
+
+    function resetGameScore(){
+        
+       document.getElementById('resetGame').innerHTML = 'Click here to reset the game';   
+       
+       resetGame.addEventListener('click', function() {
+       document.getElementById('resetGame').style.visibility = "hidden";
+       document.getElementById('gameResult').style.visibility = "hidden";
+
+        plyerScore=0;
+        compScore=0;
+
+        document.getElementById('player1Score').innerHTML = plyerScore;   
+        document.getElementById('player2Score').innerHTML = compScore;
+       
+       })
+}
+   
         function computerPlay() {
-         /*   num = Math.floor(Math.random() * 3);
-            switch (num) {
-                case 0:
-                    return "Rock";
-                case 1:
-                    return "Paper";
-                case 2:
-                    return "Scissors";
-            }*/
-  num = Math.floor(Math.random() * 3);
+         
+        num = Math.floor(Math.random() * 3);
             return {
                 0: "Rock",
                 1: "Paper",
-                2: "Scissor"
+                2: "Scissors"
 
             }[num]
 
@@ -55,14 +87,15 @@
    
           //Rock
             if (playerSelection == 'rock' && computerSelection == 'Scissors') {
-                plyslec++;
-
+                plyerScore++;
+                document.getElementById('player1Score').innerHTML = plyerScore;
                 return "You Win! Rock beats Scissors";
             }
             
             else if (playerSelection == 'rock' && computerSelection == "Paper") {
-               compsle++;
-                return "You Loose! Rock beats Paper";
+               compScore++;
+               document.getElementById('player2Score').innerHTML = compScore;
+               return "You Loose! Rock beats Paper";
             }
             
              else if (playerSelection == 'rock' && computerSelection == 'Rock') {
@@ -71,13 +104,15 @@
 
             //Paper
             else if (playerSelection == 'paper' && computerSelection == 'Rock') {
-                plyslec++;
+                plyerScore++;
+                document.getElementById('player1Score').innerHTML = plyerScore;
                 return "You Win! Paper beats Rock";
             }
 
             else if (playerSelection == 'paper' && computerSelection == 'Scissors') {
-                  compsle++;
-                return "You Loose! Scissors beats Paper";
+                 compScore++;
+                  document.getElementById('player2Score').innerHTML = compScore;
+                  return "You Loose! Scissors beats Paper";
             }
 
             else if (playerSelection == 'paper' && computerSelection == 'Paper') {
@@ -86,12 +121,14 @@
 
             //Scissors    
             else if (playerSelection == "scissors" && computerSelection == "Paper") {
-                plyslec++;
+                plyerScore++;
+                document.getElementById('player1Score').innerHTML = plyerScore;
                 return "You Win! Scissors beats Paper ";
             }
         
              else if (playerSelection == "scissors" && computerSelection == "Rock") {
-                compsle++;
+                compScore++;
+                document.getElementById('player2Score').innerHTML = compScore;
                 return "You Loose! Scissors beats Rock";
             }
 
@@ -102,21 +139,5 @@
         }
 
 
-        /*playRound("rock",computerSelection));
-            while (counter <= 4) {
-                var playerSelection = prompt("Please enter your selection rock, paper or scissors")
-                const computerSelection = computerPlay()
-                console.log(playRound(playerSelection, computerSelection))
-                counter++;
-            }
-
-            if (plyslec==compsle){
-                 console.log("Its a tie. Please play again")
-            }
-            else if (plyslec > compsle) {
-                console.log("Congratulations, you are the winner after 5 rounds")
-            }
-            else{
-                console.log("Bad luck, the PC has won after after 5 rounds. ")
-            }
-            */
+    
+      
