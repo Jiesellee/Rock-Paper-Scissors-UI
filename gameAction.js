@@ -27,11 +27,14 @@ function roundWinner(gameChoice){
             'PC selection is ' + computerSelection
   document.getElementById('roundWinner').innerHTML = result
   overallGameWinner();
+  displaysAllGameScores(result);
 }
 
-/* function displaysAllGameScores(){
-       gameScores.push();
-    } */
+function displaysAllGameScores(result){
+      gameScores.push(result);
+      gameScores.toString();
+      document.getElementById('allScores').innerHTML = gameScores;
+    } 
 
 function overallGameWinner () {
   if (plyerScore >= 5) {
