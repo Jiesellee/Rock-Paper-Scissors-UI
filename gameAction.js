@@ -6,33 +6,28 @@ var gameScores = []
 document.getElementById('player1Score').innerHTML = plyerScore
 document.getElementById('player2Score').innerHTML = compScore
 
-// function
+
 rock.addEventListener('click', function () {
-  const computerSelection = computerPlay()
-  const result = playRound('rock', computerSelection)
-  document.getElementById('gamePlay').innerHTML = 'Player selection is Rock' + '<br />' +
-            'PC selection is ' + computerSelection
-  document.getElementById('roundWinner').innerHTML = result
-  overallGameWinner()
+  roundWinner('rock');
 })
 
 paper.addEventListener('click', function () {
-  const computerSelection = computerPlay()
-  const result = playRound('paper', computerSelection)
-  document.getElementById('gamePlay').innerHTML = 'Player selection is Paper' + '<br />' +
-             'PC selection is ' + computerSelection
-  document.getElementById('roundWinner').innerHTML = result
-  overallGameWinner()
+  roundWinner('paper');
 })
 
 scissors.addEventListener('click', function () {
-  const computerSelection = computerPlay()
-  const result = playRound('scissors', computerSelection)
-  document.getElementById('gamePlay').innerHTML = 'Player selection is Scissors' + '<br />' +
-             'PC selection is ' + computerSelection
-  document.getElementById('roundWinner').innerHTML = result
-  overallGameWinner()
+  roundWinner('scissors');
 })
+
+
+function roundWinner(gameChoice){
+    const computerSelection = computerPlay()
+  const result = playRound(gameChoice, computerSelection)
+  document.getElementById('gamePlay').innerHTML = 'Player selection is '+gameChoice + '<br />' +
+            'PC selection is ' + computerSelection
+  document.getElementById('roundWinner').innerHTML = result
+  overallGameWinner();
+}
 
 /* function displaysAllGameScores(){
        gameScores.push();
@@ -51,7 +46,11 @@ function overallGameWinner () {
 function resetGameScore () {
   document.getElementById('resetGame').innerHTML = 'Click here to reset the game'
 
-  resetGame.addEventListener('click', function () {
+    document.getElementById('resetGame').style.visibility = 'visible'
+    document.getElementById('gameResult').style.visibility = 'visible'
+
+    resetGame.addEventListener('click', function () {
+   
     document.getElementById('resetGame').style.visibility = 'hidden'
     document.getElementById('gameResult').style.visibility = 'hidden'
 
