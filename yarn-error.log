@@ -1,0 +1,60 @@
+Arguments: 
+  /Users/jurquhar/.nvm/versions/node/v9.11.1/bin/node /usr/local/Cellar/yarn/1.6.0/libexec/bin/yarn.js test
+
+PATH: 
+  /Users/jurquhar/anaconda3/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/jurquhar/.rbenv/shims:/Users/jurquhar/.rbenv/shims:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/heroku/bin:/Users/jurquhar/go/bin:/Users/jurquhar/.nvm/versions/node/v9.11.1/bin:/Users/jurquhar/.rvm/gems/ruby-2.3.1/bin:/Users/jurquhar/.rvm/gems/ruby-2.3.1@global/bin:/Users/jurquhar/.rvm/rubies/ruby-2.3.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/share/ant/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:~/scripts:/Users/jurquhar/.rvm/bin:/usr/local/opt/go/libexec/bin:/bin:/Users/jurquhar/go/src/github.com/River-Island/product-tools/cli/bin
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  9.11.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/jurquhar/OdinProject/Rock-Paper-Scissors-Game-Javascript/package.json: Unexpected token / in JSON at position 423
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.6.0/libexec/lib/cli.js:109:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "rock-paper-scissors-game-javascript",
+    "version": "1.0.0",
+    "description": "rock-paper-scissors game in Javascript",
+    "main": "gameAction.js",
+    "dependencies": {},
+    "devDependencies": {
+      "chai": "^4.2.0",
+      "eslint": "^5.11.1",
+      "eslint-config-airbnb-base": "^13.1.0",
+      "eslint-plugin-import": "^2.14.0",
+      "jest": "^23.6.0",
+      "mocha": "^5.2.0"
+    },
+    "scripts": {
+      "test": "jest",     //mocha --env-jsdom",
+      "lint": "eslint . --fix"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/jieselle/Rock-Paper-Scissors-UI.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/jieselle/Rock-Paper-Scissors-UI/issues"
+    },
+    "homepage": "https://github.com/jieselle/Rock-Paper-Scissors-UI#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

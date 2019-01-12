@@ -14,7 +14,6 @@ h1{
 }
 
 #player1Score, #player2Score, #p2{
-/*color: grey;*/
 font-size: 90px;
 padding-top: 15px;
 display: inline-block;
@@ -37,8 +36,7 @@ font-family: 'Aldrich', sans-serif;
     outline: 0;
 }
 
-
-.button button:hover{
+.button button:not(.nohover):hover{
     background-color: #00bcd49c;
     color:#23386bbd;
 }
@@ -77,6 +75,11 @@ font-family: 'Aldrich', sans-serif;
       font-size: 1.2em;
       line-height: 150%;
 }
+#allScores{
+text-align: left;
+font-size:14px;
+padding-left: 45px
+}
 
 #gameResult{
       position: relative;
@@ -106,7 +109,7 @@ font-family: 'Aldrich', sans-serif;
 
 
 .box {
-  width: 750px;
+  width: 550px;
   height: 700px;
   position: absolute;
   border: 1px solid azure;
@@ -114,7 +117,6 @@ font-family: 'Aldrich', sans-serif;
   top: 700px;
   left: 400px;
   background-color: azure;
-  
 }
 
 .previousScore{
@@ -133,3 +135,17 @@ font-family: 'Aldrich', sans-serif;
     top:350px;
 }
 
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    body {
+      /*background-color: #F09A9D; /* Red */
+    }
+  }
+  
+   
+  /* Desktop Styles */
+  @media only screen and (min-width: 961px) {
+    body {
+      /*background-color: #B2D6FF; /* Blue */
+    }
+  }
